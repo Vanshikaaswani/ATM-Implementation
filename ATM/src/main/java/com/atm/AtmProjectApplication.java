@@ -5,7 +5,7 @@ import com.atm.services.ATMUser;
 import com.atm.services.Withdrawal;
 
 /***
- * Main class for ATM project
+ * Entry point for ATM project Application
  */
 public class AtmProjectApplication {
 

@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /***
- * Atm class having all the denominations and related methods
+ * Singleton class representing Atm having all cash denominations with update and get methods
  */
 public class Atm {
 
@@ -20,6 +20,11 @@ public class Atm {
         denominations.put(100, 10);
     }
 
+    /***
+     * returns singleton instance of ATM.
+     * @return the singleton instance
+     */
+
     public static Atm getInstance() {
         if (atm == null) {
             atm = new Atm();
@@ -27,10 +32,19 @@ public class Atm {
         return atm;
     }
 
+    /***
+     * get cash denominations map
+     * @return Map<Integer, Integer>
+     */
     public synchronized Map<Integer, Integer> getCashDenominations() {
         return denominations;
     }
 
+    /***
+     * updating cash denominations counts
+     * @param denomination cash
+     * @param count quantity of cash
+     */
     public synchronized void updateDenomination(int denomination, int count) {
         denominations.put(denomination, count);
     }

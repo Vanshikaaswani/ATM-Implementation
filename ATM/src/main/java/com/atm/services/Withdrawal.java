@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 /***
- * Service for handling Withdrawal operations.
+ * Handles Withdrawal operations for ATM.
  */
 public class Withdrawal {
     private Atm atm;
@@ -20,9 +20,10 @@ public class Withdrawal {
 
     /***
      * Performs cash withdrawal
-     * @param withdrawAmount
-     * @param id
-     * @return
+     * @param withdrawAmount amount to withdraw
+     * @param id             the transaction id
+     * @return a map containing transaction id and  list of withdrawal transaction.
+     * @throws RuntimeException if Atm does not have sufficient cash denominations.
      */
     public synchronized Map<String, List<WithdrawalTransaction>> withdraw(int withdrawAmount, String id) {
 
@@ -54,6 +55,10 @@ public class Withdrawal {
         return result;
     }
 
+    /***
+     * Validating if withdraw amount is not negative and atm has sufficient balance.
+     * @param withdrawAmount
+     */
     public void validateAmount(int withdrawAmount) {
         int balance = atm.getCashDenominations().entrySet().stream().mapToInt(denominations -> denominations.getKey() * denominations.getValue()).sum();
         if (balance == 0) {

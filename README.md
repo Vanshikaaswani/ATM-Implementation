@@ -21,7 +21,6 @@ Ensure that the code takes care of the following:
 
 ## NFRs
 
-- Duration of this exercise is 90 minutes. Please manage your time accordingly,
 - Make any necessary assumption, and clearly state the assumptions made.
 - Do not seek any help online or through any other source.
 
@@ -37,3 +36,58 @@ Ensure that the code takes care of the following:
 - **Code test Cases and follow TDD** (if know)
 
 # Solution
+
+# ATM Project Application
+
+## Overview
+
+The ATM Project Application simulates an ATM system where multiple users can withdraw cash simultaneously.
+The application ensures proper handling of cash denominations.
+
+## Features
+
+- Simulates ATM cash withdrawal operations.
+- Manages cash denominations within the ATM.
+- Ensures thread safety for concurrent transactions.
+- Logs transaction details and errors using Log4j.
+
+## Components
+
+### Main Class
+
+- **AtmProjectApplication**: The entry point of the application. It initializes the ATM and starts multiple user threads
+  to perform withdrawal operations.
+
+### Services
+
+- **ATMUser**: Represents an ATM user performing a withdrawal operation.
+- **Withdrawal**: Handles the withdrawal operations, and proper management of cash denominations.
+
+### Repository
+
+- **Atm**: Singleton class representing the ATM with cash denominations. Provides methods to access and update the cash
+  denominations.
+
+### DTO
+
+- **WithdrawalTranscation**: Represents a withdrawal transaction with details about the denomination and the number of
+  notes dispensed.
+
+## How to Run
+
+1. **Clone the repository**:
+
+   git clone https://github.com/Vanshikaaswani/ATM-Implementation.git
+
+2. **Build the project**
+
+3. **Run the application**
+
+## Logging
+
+The application uses Log4j for logging transaction details and errors. Logs are printed to the console.
+
+## Unit Tests
+
+Unit tests are written using JUnit to ensure the correctness of the withdrawal operations.
+
