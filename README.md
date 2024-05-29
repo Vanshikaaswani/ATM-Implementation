@@ -76,12 +76,19 @@ The application ensures proper handling of cash denominations.
 ## How to Run
 
 1. **Clone the repository**:
-
+   ```sh
    git clone https://github.com/Vanshikaaswani/ATM-Implementation.git
+   ```
 
 2. **Build the project**
+   ```sh
+   mvn clean install
+   ```
 
 3. **Run the application**
+   ```sh
+   mvn exec:java
+   ```
 
 ## Logging
 
@@ -91,3 +98,13 @@ The application uses Log4j for logging transaction details and errors. Logs are 
 
 Unit tests are written using JUnit to ensure the correctness of the withdrawal operations.
 
+## Assumptions
+
+1. ATM can have any number of denominations, but all denominations should be multiple of 10.
+2. User can withdraw any available amount in multiple of 10.
+
+## Future scope
+
+1. UI: We can develop user-friendly GUI to withdraw the cash.
+2. Enhanced Security: Implement user authentication and integration can be efficient.
+3. Database: Implementation of database can be done to store ATM details.
