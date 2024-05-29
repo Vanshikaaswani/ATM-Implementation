@@ -89,7 +89,13 @@ The application ensures proper handling of cash denominations.
    ```sh
    mvn exec:java
    ```
-
+4. Output will be displayed in console as shown below:
+   ```sh
+   2024-05-29 15:43:34 INFO  com.atm.services.ATMUser - Starting ATM Application
+   2024-05-29 15:43:34 INFO  com.atm.services.ATMUser - Transaction id: 1  Withdrawal details: [ WithdrawalTransaction {denomination=500, count=10 },  WithdrawalTransaction {denomination=100, count=5 }]
+   2024-05-29 15:43:34 INFO  com.atm.services.ATMUser - Transaction id: 2  Withdrawal details: [ WithdrawalTransaction {denomination=100, count=5 },  WithdrawalTransaction {denomination=50, count=10 }]
+   2024-05-29 15:43:34 INFO  com.atm.services.ATMUser - Ended ATM Application
+   ```
 ## Logging
 
 The application uses Log4j for logging transaction details and errors. Logs are printed to the console.
