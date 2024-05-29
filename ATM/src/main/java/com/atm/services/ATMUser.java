@@ -15,9 +15,9 @@ import java.util.Map;
 public class ATMUser implements Runnable {
     private static final Logger logger = LoggerFactory.getLogger(ATMUser.class);
 
-    private Withdrawal withdrawal;
-    private int withdrawAmount;
-    private String id;
+    private final Withdrawal withdrawal;
+    private final int withdrawAmount;
+    private final String id;
 
     public ATMUser(Withdrawal withdrawal, int withdrawAmount, String id) {
         this.withdrawal = withdrawal;
